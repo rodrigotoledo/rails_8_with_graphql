@@ -1,8 +1,8 @@
 class TmdbService
   include HTTParty
-  base_uri 'https://api.themoviedb.org/3'
+  base_uri "https://api.themoviedb.org/3"
 
-  def initialize(api_key = ENV['TMDB_API_KEY'])
+  def initialize(api_key = ENV["TMDB_API_KEY"])
     @api_key = api_key
   end
 

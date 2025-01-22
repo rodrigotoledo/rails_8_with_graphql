@@ -45,15 +45,15 @@ group :development, :test do
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
 
-  gem 'rspec-rails'
-  gem 'guard-rspec', require: false
-  gem 'simplecov', require: false
+  gem "rspec-rails"
+  gem "guard-rspec", require: false
+  gem "simplecov", require: false
 end
 
 group :test do
-  gem 'rails-controller-testing'
+  gem "rails-controller-testing"
 end
 
-gem 'dotenv-rails'
-gem 'graphql'
-gem 'httparty'
+gem "dotenv-rails"
+gem "graphql"
+gem "httparty"

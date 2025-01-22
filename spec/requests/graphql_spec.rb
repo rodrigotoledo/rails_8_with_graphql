@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'GraphQL API', type: :request do
   let(:api_key) { ENV['TMDB_API_KEY'] }
-  let!(:movie_title){ 'John Wick: Chapter 4'}
+  let!(:movie_title) { 'John Wick: Chapter 4' }
 
   describe 'searchMovies' do
     let(:query) do
