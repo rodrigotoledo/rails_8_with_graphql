@@ -1,0 +1,27 @@
+ARG RUBY_VERSION=3.3.4
+FROM registry.docker.com/library/ruby:$RUBY_VERSION-slim as base
+
+ARG USER_ID=1000
+ARG GROUP_ID=1000
+
+RUN apt-get update && apt-get install -y \
+  build-essential \
+  nodejs \
+  libsqlite3-dev \
+  git \
+  curl \
+  --no-install-recommends && \
+  rm -rf /var/lib/apt/lists/*
+
+RUN groupadd -g ${GROUP_ID} appuser && useradd -u ${USER_ID} -g ${GROUP_ID} -m appuser
+USER appuser
+
+WORKDIR /app
+
+COPY --chown=appuser:appuser Gemfile Gemfile.lock ./
+USER appuser
+RUN gem install bundler --no-doc && bundle install
+
+COPY --chown=appuser:appuser . .
+
+CMD ["bin/rails", "server", "-b", "0.0.0.0"]

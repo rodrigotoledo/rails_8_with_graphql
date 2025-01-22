@@ -1,0 +1,24 @@
+version: "3.8"
+networks:
+  backend:
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.development
+    tty: true
+    volumes:
+      - .:/app
+      - bundle:/usr/local/bundle
+    working_dir: /app
+    environment:
+      DB: sqlite3
+      BUNDLE_GEMFILE: /app/Gemfile
+      PORT: 3000
+    command: bin/docker-dev-start-web.sh
+    networks:
+      - backend
+    ports:
+      - "3000:3000"
+volumes:
+  bundle:
