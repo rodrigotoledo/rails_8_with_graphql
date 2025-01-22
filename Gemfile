@@ -48,7 +48,7 @@ group :development, :test do
   gem "rspec-rails"
   gem "guard-rspec", require: false
   gem "simplecov", require: false
-  gem 'foreman'
+  gem "foreman"
 end
 
 group :test do
