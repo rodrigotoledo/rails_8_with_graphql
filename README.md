@@ -15,57 +15,58 @@ This is a sample Rails project with a GraphQL API that integrates with The Movie
 
 To run this project locally, ensure you have the following installed:
 
-- Ruby (preferably using `rbenv` or `rvm`)
+- Ruby (preferably using `rbenv` or `asdf2`)
 - Rails
 - SQLite3 (for local development and testing)
 
 ### Installation
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/rails-graphql-tmdb.git
-   cd rails-graphql-tmdb
-  ```
+
+```bash
+  git clone https://github.com/your-username/rails-graphql-tmdb.git
+  cd rails-graphql-tmdb
+```
 
 2. Install dependencies:
 
-  ```bash
-  bundle install
-  ```
+```bash
+bundle install
+```
 
 3. Set up the database:
 
-  ```bash
-  cp config/database.yml.sample config/database.yml
-  bin/rails db:create db:schema:load
-  ```
+```bash
+cp config/database.yml.sample config/database.yml
+bin/rails db:create db:schema:load
+```
 
 4. Set up your environment variables. You'll need to create a .env file with the following:
 
-  ```bash
-  TMDB_API_KEY=your_tmdb_api_key
-  ```
+```bash
+TMDB_API_KEY=your_tmdb_api_key
+```
 
 ### Running the Application
 
 1. Start the Rails server:
 
-  ```bash
-  bin/rails server
-  ```
+```bash
+bin/rails server
+```
 
 2. Use the postman collection:
 
-  ```graphql
-  query {
-    searchMovies(query: "Inception") {
-      id
-      title
-      overview
-      releaseDate
-    }
+```graphql
+query {
+  searchMovies(query: "Inception") {
+    id
+    title
+    overview
+    releaseDate
   }
-  ```
+}
+```
 
 ## Testing
 
@@ -76,15 +77,15 @@ To run the tests locally:
 
 1. Prepare the test database:
 
-  ```bash
-  bin/rails db:test:prepare
-  ```
+```bash
+bin/rails db:test:prepare
+```
 
 2. Run the tests:
 
-  ```bash
-  bundle exec guard
-  ```
+```bash
+bundle exec guard
+```
 
 ## CI/CD with GitHub Actions
 
