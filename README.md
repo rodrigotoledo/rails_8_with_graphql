@@ -37,7 +37,6 @@ bundle install
 3. Set up the database:
 
 ```bash
-cp config/database.yml.sample config/database.yml
 bin/rails db:create db:schema:load
 ```
 
