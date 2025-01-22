@@ -24,8 +24,8 @@ To run this project locally, ensure you have the following installed:
 1. Clone the repository:
 
 ```bash
-  git clone https://github.com/your-username/rails-graphql-tmdb.git
-  cd rails-graphql-tmdb
+  git clone https://github.com/rodrigtoledo/rails_8_with_graphql.git
+  cd rails_8_with_graphql
 ```
 
 2. Install dependencies:
